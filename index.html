@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Выкупим ваш автомобиль</title>
+    <link rel="stylesheet" href="reset.css"/>
+    <link rel="stylesheet" href="style.css"/>
+    <script src="script.js" defer></script>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=23549774-95f4-40d1-9c41-d1efabff3f4c&lang=ru_RU" type="text/javascript"></script>
+
+</head>
+<body>
+   <!-- Фиксированная шапка -->
+   <header class="header">
+    <div class="logo">
+        <img src="images/logo.png" alt="Логотип" />
+        <h1>Купим ваш автомобиль</h1>
+    </div>
+    <div class="contact-info">
+        <span>8 (926) 499-95-66</span>
+    </div>
+    <nav class="nav-menu">
+        <ul>
+            <li><a href="#home">Главное</a></li>
+            <li><a href="#contacts">Контакты</a></li>
+        </ul>
+        <a href="#contacts" style="text-decoration: none;">
+            <button style="
+              padding: 10px 20px;
+              background-color: black;
+              color: white;
+              border: none;
+              border-radius: 5px;
+              cursor: pointer;
+              transition: background-color 0.3s;">
+              Связаться с нами
+            </button>
+          </a>
+          
+    </nav>
+    
+</header>
+<section id="home">...</section>
+<section id="services">...</section>
+
+<div class="burger-menu">&#9776;</div>
+<nav class="nav-menu">
+    <ul>
+        <li><a href="#home">Главное</a></li>
+        <li><a href="#contacts">Контакты</a></li>
+    </ul>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>Автозакупка</h1>
+        <p>Покупаем иномарки и отечественные авто, <br> рассмотрим все варианты</p>
+        <a href="#contact" class="btn-contact">Связаться с нами</a>
+    </div>
+</section>
+
+<!-- Квиз для оценки автомобиля -->
+<section class="quiz-section">
+    <div class="quiz-content">
+        <h2>Бесплатная оценка вашего автомобиля онлайн</h2>
+        <a href="#quiz" class="btn-quiz">Оценить автомобиль</a>
+    </div>
+</section>
+
+<!-- Форма квиза -->
+<section id="quiz" class="quiz hidden">
+    <h2>Оценка автомобиля</h2>
+    <form id="quiz-form">
+        <label>Марка автомобиля:</label>
+        <input type="text" name="brand" required>
+
+        <label>Год выпуска:</label>
+        <input type="number" name="year" required>
+
+        <label>Пробег (в километрах):</label>
+        <input type="number" name="mileage" required>
+
+        <label>Состояние:</label>
+        <select name="condition" required>
+            <option value="Отличное">Отличное</option>
+            <option value="Хорошее">Хорошее</option>
+            <option value="Требует ремонта">Требует ремонта</option>
+        </select>
+
+        <button type="button" onclick="redirectToContact()">Отправить</button>
+    </form>
+</section>
+
+<!-- Секция услуг -->
+<section class="services-section">
+    <h2>Предоставляем все виды услуг:</h2>
+    <ul class="services-list">
+        <li>Предварительная и бесплатная оценка стоимости автомобиля на сайте, по телефону или по фотографиям через WhatsApp</li>
+        <li>Согласовываем удобную для Вас дату и время встречи</li>
+        <li>Бесплатно выезжаем по указанному Вами адресу</li>
+        <li>Бесплатно осматриваем автомобиль на месте (без всяких долгих диагностик на автосервисе)</li>
+        <li>Оформление всех необходимых документов, ТОЛЬКО после получения Вами денежных средств за автомобиль</li>
+        <li>Любая форма оплаты – выбирать только Вам</li>
+        <li>Работаем по всей Москве, Московской области и Центральной России!</li>
+        <li>Предлагайте и мы обязательно с Вами договоримся!</li>
+    </ul>
+</section>
+
+<!-- Секция преимуществ -->
+<section class="advantages-section">
+    <h2>Наши преимущества</h2>
+    <div class="advantages-grid">
+        <div class="advantage-item">
+            <img src="images/oplata.png" alt="Оплата">
+            <p>Любая форма оплаты на ваше усмотрение</p>
+        </div>
+        <div class="advantage-item">
+            <img src="images/opit.png" alt="Опыт">
+            <p>Большой опыт работы</p>
+        </div>
+        <div class="advantage-item">
+            <img src="images/garantia.png" alt="Договор">
+            <p>Заключение договора купли-продажи авто на месте</p>
+        </div>
+        <div class="advantage-item">
+            <img src="images/vsrok.png" alt="МРЭО">
+            <p>Оформление авто в МРЭО в срок по закону</p>
+        </div>
+        <div class="advantage-item">
+            <img src="images/bistro.png" alt="Срочный выкуп">
+            <p>Срочный выкуп автомобилей любой марки и модели</p>
+        </div>
+        <div class="advantage-item">
+            <img src="images/otvechaem.png" alt="Поддержка">
+            <p>Быстро отвечаем на все ваши вопросы</p>
+        </div>
+    </div>
+</section>
+
+<!-- Галерея -->
+<section class="gallery-section">
+    <h2>Галерея</h2>
+    <div class="gallery-grid">
+        <img src="images/car1.jpg" alt="Car 1" class="gallery-item" onclick="openModal(0)">
+        <img src="images/car2.jpg" alt="Car 2" class="gallery-item" onclick="openModal(1)">
+        <img src="images/car4.jpg" alt="Car 4" class="gallery-item" onclick="openModal(3)">
+        <img src="images/car5.jpg" alt="Car 5" class="gallery-item" onclick="openModal(4)">
+        <img src="images/car6.jpg" alt="Car 6" class="gallery-item" onclick="openModal(5)">
+        <img src="images/car7.jpg" alt="Car 7" class="gallery-item" onclick="openModal(6)">
+        <img src="images/car8.jpg" alt="Car 8" class="gallery-item" onclick="openModal(7)">
+        <img src="images/car9.jpg" alt="Car 9" class="gallery-item" onclick="openModal(8)">
+        <img src="images/car3.jpg" alt="Car 3" class="gallery-item" onclick="openModal(2)">
+        <img src="images/car10.jpg" alt="Car 10" class="gallery-item" onclick="openModal(9)"> 
+    </div>
+</section>
+
+<!-- Модальное окно -->
+<div id="modal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img id="modal-img" class="modal-content">
+    <div class="modal-navigation">
+        <button class="prev" onclick="changeImage(-1)">&#10094;</button>
+        <button class="next" onclick="changeImage(1)">&#10095;</button>
+    </div>
+</div>
+
+<!--контакты и карта-->
+<section class="contacts-section" id="contacts">
+    <div class="container">
+      <div class="map-container">
+        <div id="map"></div>
+        <iframe
+          src="https://api-maps.yandex.ru/2.1/?apikey=23549774-95f4-40d1-9c41-d1efabff3f4c&lang=ru_RU"
+          width="100%" height="300" frameborder="0" allowfullscreen></iframe>
+      </div>
+  
+      <div class="form-container">
+        <h2>Контакты</h2>
+        <form>
+          <label for="name"></label>
+          <input type="text" id="name" placeholder="Ваше имя" required />
+  
+          <label for="email"></label>
+          <input type="email" id="email" placeholder="Ваш email" required />
+  
+          <button type="submit">Отправить</button>
+        </form>
+        
+        <div class="contact-info">
+          <p><strong>8 (926) 499-95-66</strong></p>
+          <p>Москва, М. Речной вокзал</p>
+          <p>КРУГЛОСУТОЧНО, БЕЗ ВЫХОДНЫХ</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+  <footer class="footer">
+    <div class="footer-container">
+        <p>&copy; 2024 КУПИМ ВАШ АВТОМОБИЛЬ. Москва, М. Речной вокзал, <a href="tel:+79264999566">8 (926) 499-95-66</a>.</p>
+    </div>
+</footer>
+
+
+</body>
+</html>

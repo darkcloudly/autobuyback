@@ -1,0 +1,720 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* общие стили */
+body {
+    .poppins-regular {
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+      
+      .poppins-medium {
+        font-family: "Poppins", sans-serif;
+        font-weight: 500;
+        font-style: normal;
+      }
+      
+      .poppins-semibold {
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+        font-style: normal;
+      }
+      
+      .poppins-bold {
+        font-family: "Poppins", sans-serif;
+        font-weight: 700;
+        font-style: normal;
+      }      
+}
+
+.container {
+    max-width: 1500px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+/* Стили для сброса отступов */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Фиксированная шапка */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+/* Логотип и заголовок */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.logo h1 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+/* Контактный номер */
+.contact-info {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #333;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+.burger-menu {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .nav-menu ul {
+        display: none;
+        flex-direction: column;
+    }
+
+    .burger-menu {
+        display: block;
+    }
+}
+
+/* Меню навигации */
+.nav-menu {
+    display: flex;
+    align-items: center;
+}
+
+.nav-menu ul {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+}
+
+.nav-menu a {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #333;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.nav-menu a:hover {
+    background-color: #e0e0e0;
+}
+
+/* Кнопка "Связаться с нами" — обычное состояние */
+.btn-contact {
+    background-color: #000 !important;  /* Чёрный фон */
+    color: white !important;            /* Белый текст */
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-left: 20px;
+    transition: background-color 0.3s, color 0.3s; /* Плавный переход */
+    border: none;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    display: inline-block;
+}
+
+/* Состояние при наведении */
+.btn-contact:hover {
+    background-color: #d3d3d3 !important; /* Светло-серый фон */
+    color: black !important;              /* Чёрный текст */
+}
+
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        height: auto;
+        padding: 15px;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .btn-contact {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Высота на весь экран */
+    background: url('images/banner.jpg') no-repeat center center/cover; /* Фон */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Затемнение фона для лучшей читаемости текста */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Прозрачный черный фон */
+    z-index: 1;
+}
+
+/* Содержимое в hero */
+.hero-content {
+    position: relative;
+    z-index: 2; /* Над затемнением */
+    color: white;
+}
+
+.hero-content h1 {
+    font-family: "Poppins", sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+/* Кнопка в hero */
+.hero .btn-contact {
+    background-color: white !important;
+    color: black !important;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.hero .btn-contact:hover {
+    background-color: black !important;
+    color: white !important;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 32px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+    }
+
+    .hero .btn-contact {
+        padding: 12px 20px;
+        font-size: 18px;
+    }
+}
+/* Секция квиза */
+.quiz-section {
+    background-color: #6c6c6c;
+    padding: 50px 20px;
+    text-align: center;
+    color: white;
+}
+
+.quiz-content h2 {
+    font-family: "Poppins", sans-serif;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.btn-quiz {
+    background-color: white !important; 
+    color: black !important;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    border: 2px solid black;
+    transition: background-color 0.3s, color 0.3s;
+    font-family: "Poppins", sans-serif;
+}
+
+.btn-quiz:hover {
+    background-color: black;
+    color: white;
+}
+
+/* Скрытие и отображение квиза */
+.hidden {
+    display: none;
+}
+
+#quiz {
+    padding: 30px;
+    background-color: #f8f8f8;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#quiz h2 {
+    margin-bottom: 20px;
+}
+
+#quiz form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#quiz input, #quiz select, #quiz button {
+    padding: 10px;
+    font-size: 16px;
+}
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    .quiz-section {
+        padding: 30px 15px;
+    }
+
+    .quiz-content h2 {
+        font-size: 24px; /* Уменьшение размера заголовка */
+    }
+
+    .btn-quiz {
+        width: 100%;        /* Кнопка на всю ширину экрана */
+        padding: 12px 0;    /* Увеличение отступов для удобного нажатия */
+        font-size: 18px;
+    }
+
+    #quiz form {
+        gap: 10px;          /* Меньший интервал между полями */
+    }
+
+    #quiz input, #quiz select, #quiz button {
+        font-size: 16px;   /* Оптимальный размер текста на мобильных */
+        padding: 10px;
+    }
+
+    #quiz {
+        margin-top: 15px;
+        padding: 20px;
+    }
+}
+
+/* Адаптивность для маленьких экранов (до 480px) */
+@media (max-width: 480px) {
+    .quiz-content h2 {
+        font-size: 20px;  /* Ещё меньше для телефонов */
+    }
+
+    .btn-quiz {
+        font-size: 16px;  /* Сбалансированный размер текста */
+    }
+
+    #quiz input, #quiz select, #quiz button {
+        font-size: 14px;  /* Комфортный размер текста на телефонах */
+    }
+}
+
+/* Секция услуг */
+.services-section {
+    background-color: #3d3d3d;  /* Темный фон */
+    color: white;
+    padding: 50px 40px; /* Увеличили отступ слева и справа */
+    text-align: left;
+}
+
+.services-section h2 {
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-size: 32px; /* Увеличиваем размер заголовка */
+    margin-bottom: 30px;
+}
+
+.services-list {
+    list-style: none;
+    padding: 0;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8; /* Увеличили межстрочный интервал */
+    padding-left: 20px; /* Отступ для текста */
+}
+
+.services-list li {
+    margin-bottom: 15px;
+    font-family: "Poppins", sans-serif;
+    font-size: 20px; /* Увеличиваем текст для удобочитаемости */
+}
+
+.services-list strong {
+    font-weight: 700;
+    color: #00e676; /* Зеленый акцент на слове WhatsApp */
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    .services-section {
+        padding: 30px 20px; /* Сократили отступы для мобильных */
+    }
+
+    .services-section h2 {
+        font-size: 28px; /* Уменьшили заголовок для мобильных */
+    }
+
+    .services-list li {
+        font-size: 18px; /* Уменьшили размер текста */
+    }
+}
+
+/* Секция преимуществ */
+.advantages-section {
+    background-color: #6c6c6c;
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.advantages-section h2 {
+    font-family: "Poppins", sans-serif;
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+.advantages-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Три колонки */
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.advantage-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.advantage-item img {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 15px;
+}
+
+.advantage-item p {
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    margin: 0;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    .advantages-grid {
+        grid-template-columns: repeat(2, 1fr); /* Две колонки на планшетах */
+    }
+
+    .advantage-item img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .advantage-item p {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .advantages-grid {
+        grid-template-columns: 1fr; /* Одна колонка на мобильных */
+    }
+
+    .advantage-item img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .advantage-item p {
+        font-size: 14px;
+    }
+}
+
+/* Секция галереи */
+.gallery-section {
+    background-color: #3d3d3d;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.gallery-section h2 {
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+/* Сетка галереи с равномерным заполнением */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: stretch;
+}
+
+.gallery-item {
+    width: 100%;
+    height: 200px; /* Фиксированная высота для ровного расположения */
+    object-fit: cover; /* Сохраняет пропорции изображения */
+    cursor: pointer;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+
+/* Модальное окно */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.modal-content {
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 10px;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: white;
+    font-size: 35px;
+    cursor: pointer;
+}
+
+.modal-navigation {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.prev, .next {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    padding: 10px;
+    transition: background-color 0.3s;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .prev, .next {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 768px) {
+    #contacts div {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    #map, form {
+      width: 90%;
+      margin-bottom: 20px;
+    }
+  }
+  
+  .contacts-section {
+    background-color: #2e2e2e;
+    padding: 50px 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .container {
+    display: flex;
+    width: 90%;
+    max-width: 1200px;
+    gap: 30px;
+
+  }
+  
+  .map-container {
+    flex: 1;
+    margin-right: 20px;
+}
+
+#map {
+    width: 100%;
+    height: 300px;
+    border-radius: 8px;
+}
+
+  
+  .form-container {
+    flex: 1;
+    background-color: #1c1c1c;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  .form-container h2 {
+    color: #fff !important; 
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .container {
+    display: flex;
+    align-items: flex-start; /* или center, если нужно */
+    flex-wrap: wrap;
+}
+
+.form-container {
+    flex: 1;
+    min-width: 300px;
+    margin-right: 10px;
+}
+
+  .form-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .form-container input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+  }
+  
+  .form-container button {
+    padding: 10px;
+    background-color: #fff;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .form-container button:hover {
+    background-color: #d3d3d3;
+  }
+  
+  .contact-info {
+    margin-top: 20px;
+    color: #fff;
+    text-align: center;
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+      gap: 20px;
+    }
+  
+    .map-container,
+    .form-container {
+      width: 100%;
+    }
+  }
+  
+  
+ /* Стили для футера */
+.footer {
+    background-color: #0e0d0d; /* Тёмно-серый фон */
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+    font-size: 14px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .footer {
+        font-size: 12px;
+    }
+}
+
+  
