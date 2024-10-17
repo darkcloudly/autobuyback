@@ -55,34 +55,70 @@ body {
     z-index: 1000;
 }
 /* Стили для шапки на мобильных устройствах */
+/* Основные стили для шапки */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+/* Стили для шапки на мобильных устройствах (до 768px) */
 @media (max-width: 768px) {
     .header {
-        height: 50px; /* Уменьшаем высоту */
-        padding: 5px 10px; /* Уменьшаем отступы */
+        height: 50px; /* Уменьшение высоты шапки */
+        padding: 5px 10px; /* Уменьшение отступов */
     }
 
     .logo img {
-        width: 30px; /* Уменьшаем размер логотипа */
+        width: 30px; /* Уменьшение логотипа */
         height: 30px;
     }
 
     .logo h1 {
-        font-size: 14px; /* Уменьшаем размер текста заголовка */
+        font-size: 14px; /* Уменьшение размера текста */
     }
 
     .nav-menu ul {
-        gap: 10px; /* Уменьшаем промежутки между пунктами меню */
+        gap: 8px; /* Уменьшение расстояния между элементами меню */
     }
 
     .contact-info {
-        font-size: 14px; /* Уменьшаем размер шрифта контактной информации */
+        font-size: 12px; /* Уменьшение размера контактной информации */
     }
 
     .btn-contact {
-        padding: 5px 10px; /* Уменьшаем размер кнопки "Связаться с нами" */
-        font-size: 12px;
+        padding: 8px 12px; /* Уменьшение кнопки */
+        font-size: 14px;
     }
 }
+
+/* Включаем бургер-меню для мобильных устройств */
+@media (max-width: 768px) {
+    .burger-menu {
+        display: block; /* Показываем бургер-меню */
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    .nav-menu ul {
+        display: none; /* Скрываем обычное меню */
+        flex-direction: column;
+    }
+
+    .nav-menu.active ul {
+        display: flex; /* Отображаем меню при клике на бургер */
+    }
+}
+
 
 /* Логотип и заголовок */
 .logo {
